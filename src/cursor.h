@@ -14,7 +14,7 @@
         // cls()                double void function that clears the screen.
         // randomInt(short,short) and randomDouble(short,short) return a value in between its parameters.
         // wait(long) waits long amount of time in milliseconds before program continues.
-		
+
 //https://docs.google.com/file/d/0B-veyAcclrE8b3h3b3RURkpZNm8/edit?pli=1
 
 #include <windows.h>
@@ -26,23 +26,23 @@
 
 enum state_t{on,off};
 std::mt19937 mt(time(0));
-enum spectrum: WORD {black = 0, 
-blue, 
-green, 
-aqua, 
-red, 
+enum spectrum: WORD {black = 0,
+blue,
+green,
+aqua,
+red,
 purple,                 // 5
-yellow, 
-white, 
-gray, 
-lightblue, 
+yellow,
+white,
+gray,
+lightblue,
 lightgreen,     // 10
 lightaqua,
 lightred,
 lightpurple,
 lightyellow,
 brightwhite,  // 15
-reset}; 
+reset};
 
 
 
@@ -61,7 +61,7 @@ Cursor::Cursor()
         console = GetStdHandle(STD_OUTPUT_HANDLE);
 };
 void Cursor::on()
-{       
+{
         lpCursor.bVisible = true;
         lpCursor.dwSize = 10;
         SetConsoleCursorInfo(console,&lpCursor);
@@ -395,7 +395,7 @@ void color(spectrum x, spectrum y, char input)
 
 void color(spectrum x)
 {
-        
+
         Color *foo = new Color;
         foo->toHex(x);
         if (x == reset)
@@ -417,7 +417,7 @@ void color(spectrum x, spectrum y)
 
 
 int randomInt(short lower, short upper)
-{               
+{
         std::uniform_int_distribution<int> dist(lower,upper);
         if (lower > upper)
                 std::uniform_int_distribution<int> dist(upper,lower);
@@ -432,10 +432,10 @@ double randomDouble(short lower, short upper)
 }
 
 
-        
+
 class Wait
 {
-public: 
+public:
         Wait();
         void setTime(clock_t sec);
 private:

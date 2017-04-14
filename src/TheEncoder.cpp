@@ -21,6 +21,7 @@ int encrypt ();
 void decrypt ();
 void mid_string(string banner, int starting, int number);
 void rectangle_box(int x, int y, int length, int width);
+//i don't remember the source of where I got the tickertape function
 void tickertape(string banner, int repeats, int box_size, int x_right_box, int y_middle, int x_left_box);
 
 
@@ -433,6 +434,7 @@ cout<<"\n\n";
 return;
 }
 
+//Support for not breaking some Windows sytem file, no such support for linux or Mac
 bool systems (string nope)
 {
 	int x;
@@ -443,7 +445,7 @@ bool systems (string nope)
 		{
 			cls();
 			cout<<"ERROR: Supected of trying to change a system file";
-			_getch();
+			//_getch();
 			return true;
 		}
 	else

@@ -5,21 +5,21 @@
 // Using this header file will eliminate having to include
 // the function definitions each time you wish to use
 // these items.  It will also allow these functions to be
-// easily accessed by beginning programmers, unfamiliar 
+// easily accessed by beginning programmers, unfamiliar
 // with the use of functions.
- 
-#include <windows.h>   
-#include <time.h>     
+
+//#include <windows.h>
+#include <time.h>
 #include <conio.h>
-     
+
 // --------------------------------------------------------
 // delay( ) -- Allow the screen to be "paused" for the
-// number of seconds determined by the programmer.  Unlike 
-// the system("PAUSE");, no message is displayed on the 
+// number of seconds determined by the programmer.  Unlike
+// the system("PAUSE");, no message is displayed on the
 // screen.  (5000 = 5 seconds, approximately)
 // --------------------------------------------------------
 // Function for delay( )
-void delay(long seconds) 
+void delay(long seconds)
 {
 	clock_t time1 = clock();  // use clock time
    	clock_t time2 = time1 + seconds;
@@ -35,11 +35,11 @@ void delay(long seconds)
 // --------------------------------------------------------
 // Function for gotoxy( , )
 void gotoxy(int x, int y)
-{  
+{
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD point;
    	point.X = x-1;
-	point.Y = y-1;     
+	point.Y = y-1;
    	SetConsoleCursorPosition(hConsole, point);
    	return;
 }
@@ -49,9 +49,9 @@ void gotoxy(int x, int y)
 // this response, and goes on.  You will not see the
 // user's response on the screen (no echo).
 // --------------------------------------------------------
-// Function for getch( ) 
+// Function for getch( )
 int getch(void)
-{ 
+{
 	int response;
   	response = _getch();
   	HANDLE hConsole = GetStdHandle(STD_INPUT_HANDLE);
@@ -73,6 +73,3 @@ int getche(void)
   	FlushConsoleInputBuffer(hConsole);
   	return response;
 }
-
-
-
