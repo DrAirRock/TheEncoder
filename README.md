@@ -6,3 +6,4 @@ NOTE:
 This should go without saying don't use this for anything important it is not secure in any way shape or form pretty much since I posted the source code don't expect to keep your passwords safe with this
 
 *Windows dependent  
+*Grammatical Errors
